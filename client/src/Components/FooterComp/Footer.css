@@ -1,4 +1,12 @@
-.stats{
+.Stats{
+    display: flex;
+    flex-direction: column;
+    margin-top: 75px;
+}
+
+
+.calculations{
     font-size: 20px;
-    font-weight: 25;
+    font-weight: bold;
+    width: 100%;
 }

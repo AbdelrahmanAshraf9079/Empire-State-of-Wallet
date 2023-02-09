@@ -1,14 +1,41 @@
-.TransactionsList{
-    padding: 30px;
+.TransactionsList {
+  padding: 30px;
+  height: 400px;
 }
 
-.bezosButton{
-    height: 50px;
-    width: 80px;
-    margin-left: 20px;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    color:#003580 ;
+.ant-table table {
+  font-size: 15px;
+  font-weight: bold;
+  -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
+  box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+  border-radius: 10px;
+}
+.bezosButton {
+  height: 30px;
+  width: 100px;
+}
+.last {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
+  box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+  border-radius: 10px;
+}
+
+.Footer {
+  width: 600px;
+  display: flex;
+  justify-content: center;
+}
+
+.Chart {
+  padding: 20px;
+  height: 350px;
+  width: 550px;
+}
+
+.Spinner{
+    height: 200px;
+    width: 200px;
 }

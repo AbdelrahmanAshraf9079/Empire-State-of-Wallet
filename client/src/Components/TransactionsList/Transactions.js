@@ -1,27 +1,25 @@
 import "./Transactions.css";
 import useFetch from "../../Hooks/useFetch";
-import { Table } from "antd";
-import { useState, useEffect } from "react";
+import { Table, Button } from "antd";
 import axios from "axios";
-import  Footer  from "../FooterComp/Footer.js";
+import Footer from "../FooterComp/Footer.js";
+import PieChart from "../PieChart/PieChart";
+import Spinner from "../Spinner/Spinner.js";
 
 const Home = () => {
-  const { data, setData } = useFetch("http://localhost:3000/api/transactions/");
+  const { data } = useFetch("http://localhost:3000/api/transactions/");
 
   const handleClick = async (text) => {
-    const res = await axios.put(
-      "http://localhost:3000/api/transactions/",
-      text
-    );
+    await axios.put("http://localhost:3000/api/transactions/", text);
     window.location.reload();
-
   };
-
+  // titles fill the column headers
   const TransData = [
     {
       title: "ID",
       dataIndex: "id",
       key: "id",
+      //render items in the row with the dataIndex
       render: (text) => <p>{text}</p>,
     },
     {
@@ -43,14 +41,19 @@ const Home = () => {
       render: (text) => <p>{text}</p>,
     },
     {
-      title: "Checkbox",
-      key: "checkbox",
+      title: "Bezos Related",
+      key: "Bezos Related",
       render: (record) => {
+        // checks if the record is bezos related or not and handles the click event
         return (
-          <button
+          <Button
+            type="primary"
+            danger={data.cacheData[record.id].bezosRelated}
             className="bezosButton"
             onClick={() => handleClick({ corporate: record.merchant_name })}
-          >{data.cacheData[record.id].bezosRelated ? "Related" : "Not Related"}</button>
+          >
+            {data.cacheData[record.id].bezosRelated ? "Related" : "Not Related"}
+          </Button>
         );
       },
     },
@@ -59,7 +62,19 @@ const Home = () => {
   return (
     <div className="TransactionsList">
       <Table columns={TransData} dataSource={data.cacheData} />
-      {(data.totals)&& <Footer data={data}/>  }
+      {data.totals ? (
+        <div className="last">
+          <div className="Footer">
+            <Footer data={data} />
+          </div>
+          <div className="Chart">
+            {" "}
+            <PieChart data={data} />
+          </div>
+        </div>
+      ) : (
+        <Spinner className="Spinner" />
+      )}
     </div>
   );
 };

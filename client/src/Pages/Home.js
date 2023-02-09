@@ -6,7 +6,7 @@ const Home = () => {
   return (
     <div>
       <Navbar />
-      <h1 className="TransTitle">All Transactions</h1>
+      <h1 className="TransTitle">Empire State of Wallet</h1>
       <Transactions />
     </div>
   );
