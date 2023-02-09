@@ -1,0 +1,14 @@
+.TransactionsList{
+    padding: 30px;
+}
+
+.bezosButton{
+    height: 50px;
+    width: 80px;
+    margin-left: 20px;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    color:#003580 ;
+}
