@@ -1,5 +1,6 @@
 import { ResponsivePie } from "@nivo/pie";
 
+//Chart component
 const PieChart = (props) => {
   let rem = props.data.totals.totalAmount - props.data.totals.bezos.totalAmount;
 
@@ -18,7 +19,7 @@ const PieChart = (props) => {
       color: "hsl(104, 70%, 50%)",
     },
   ];
-
+  //Chart configuration
   return (
     <ResponsivePie
       data={pieData}

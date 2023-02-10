@@ -2,6 +2,7 @@ import "./Home.css";
 import Navbar from "../Components/Navbar/Navbar.js";
 import Transactions from "../Components/TransactionsList/Transactions.js";
 
+// Home page component
 const Home = () => {
   return (
     <div>

@@ -1,5 +1,6 @@
 import "./Navbar.css"
 
+// Navbar component displays Nawy logo
 const Home = () => {
   return (
     <div className="navbar">

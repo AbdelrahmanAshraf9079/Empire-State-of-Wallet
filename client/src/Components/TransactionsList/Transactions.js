@@ -7,8 +7,10 @@ import PieChart from "../PieChart/PieChart";
 import Spinner from "../Spinner/Spinner.js";
 
 const Home = () => {
+  //Fetch the table data from the backend api before loading the component
   const { data } = useFetch("http://localhost:3000/api/transactions/");
 
+  //Handles the button click event and reloads the component
   const handleClick = async (text) => {
     await axios.put("http://localhost:3000/api/transactions/", text);
     window.location.reload();
@@ -71,7 +73,6 @@ const Home = () => {
             <Footer data={data} />
           </div>
           <div className="Chart">
-            {" "}
             <PieChart data={data} />
           </div>
         </div>
