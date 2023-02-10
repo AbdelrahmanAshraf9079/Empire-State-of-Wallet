@@ -1,9 +1,8 @@
 # Empire-State-of-Wallet
 
-Installation instructions:
+#Installation instructions:
 
-1- cd api
-2- npm start (to run the backend server)
-
-3- cd client
+- cd api
+- npm start (to run the backend server)
+- cd client
 4- npm start (to run the frontend server)
