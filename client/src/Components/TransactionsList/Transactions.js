@@ -19,6 +19,7 @@ const Home = () => {
       title: "ID",
       dataIndex: "id",
       key: "id",
+      width: '10%',
       //render items in the row with the dataIndex
       render: (text) => <p>{text}</p>,
     },
@@ -26,12 +27,14 @@ const Home = () => {
       title: "Corporate",
       dataIndex: "merchant_name",
       key: "corporate",
+      width: '30%',
       render: (text) => <p>{text}</p>,
     },
     {
       title: "Amount",
       dataIndex: "amount",
       key: "amount",
+      width: '20%',
       render: (text) => <p>{text}</p>,
     },
     {
